@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 
 var contactSchema = new Schema(
   {
-    firstname: {
-      type: String,
-      required: true
-    },
-    lastname: {
+    name: {
       type: String,
       required: true
     },
@@ -22,6 +18,6 @@ var contactSchema = new Schema(
   }
 );
 
-var Contact = mongoose.model("contact", contactSchema);
+var Contacts = mongoose.model("Contact", contactSchema);
 
-module.exports = Contact;
+module.exports = Contacts;
