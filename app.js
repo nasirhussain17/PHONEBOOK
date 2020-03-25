@@ -9,6 +9,7 @@ var usersRouter = require("./routes/users");
 var contactRouter = require("./routes/contactroute");
 const mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
+const cors = require("cors");
 
 const Contacts = require("./models/contact");
 
@@ -29,7 +30,7 @@ var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
-
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
